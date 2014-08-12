@@ -10,7 +10,7 @@ Cuts a (large) string into files at the markers provided; usually comes handy wh
 ## Installation
 
 ```
-$ sudo apt-get install cut_to_files
+$ sudo gem install cut_to_files
 ```
 
 
