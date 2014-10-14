@@ -23,19 +23,22 @@ Using the gem couldn't be simpler. Assuming you are generating code that will en
 require 'cut_to_files'
 
 
-some_long_auto_generated_string = %Q{
---conf/main.conf
-;some config data here
-...
+s = %Q{
+*conf/main.conf
+foo
+bar
 
---view/admin/index.erb
+*view/admin/index.erb
 <!--some html here-->
 <p>the admin index page here</p>
 ...
 ...
+
++conf/main.conf
+baz
 }
 
-some_long_auto_generated_string.cut_to_files #you should now find, ./conf/main.conf and ./view/admin/index.erb files respectively
+s.cut_to_files #you should now find, ./conf/main.conf and ./view/admin/index.erb files respectively
 
 ```
 
