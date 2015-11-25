@@ -2,6 +2,10 @@
 
 Cuts a (large) string into files at the markers provided; usually comes handy when generating massive amounts of code and need a way to split the output into separate files during the post-process.
 
+Two line markers (place on any line on column 0) are available:
+
+* creates new files
++ appends to existing files
 
 ## Requirements
 
@@ -15,8 +19,6 @@ $ sudo gem install cut_to_files
 
 
 ## Example
-
-Using the gem couldn't be simpler. Assuming you are generating code that will end up in separate files, add markers as below (a path where the following content shall be saved to; path starting with two dashes starting on column 0). Once you have such a string, simply call cut_to_files on that string after including this gem like so:
 
 ```
 
@@ -38,7 +40,7 @@ bar
 baz
 }
 
-s.cut_to_files #you should now find, ./conf/main.conf and ./view/admin/index.erb files respectively
+s.cut_to_files #you should now find, ./conf/main.conf and ./view/admin/index.erb files respectively. notice that conf/main.conf has baz in the body since we used a + line marker to append rather than overwrite
 
 ```
 
